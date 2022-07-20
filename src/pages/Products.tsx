@@ -24,6 +24,8 @@ export function Products() {
 		() => products.filter((product) => product.product_type.toLowerCase().includes(data.toLowerCase())),
 		[products, data]
 	);
+	const brandName = useMemo(() => search.split("brand=")[1], [search]);
+
 	useEffect(() => {
 		setLoading(true);
 		fetchMake().then((data) => {
@@ -39,7 +41,7 @@ export function Products() {
 	return (
 		<main className="bg-gray-100 min-h-screen">
 			<section className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 ">
-				<h1 className="text-2xl font-extrabold tracking-tight text-gray-900">Produtos Maybelline</h1>
+				<h1 className="text-2xl font-extrabold tracking-tight text-gray-900">Produtos {brandName}</h1>
 				<div className="mt-4">
 					<div>
 						<select
