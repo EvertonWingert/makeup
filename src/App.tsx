@@ -4,6 +4,7 @@ import { Home } from './pages/Home'
 import { Loreal } from './pages/Loreal'
 import { Maybelline } from './pages/Maybelline'
 import { Covergirl } from './pages/Covergirl'
+import { Details } from './pages/Details'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/maybelline' element={<Maybelline />} />
         <Route path='/loreal' element={<Loreal />} />
         <Route path='/covergirl' element={<Covergirl />} />
+        <Route path='/details/:id' element={<Details />} />
       </Routes>
     </BrowserRouter>
   )
